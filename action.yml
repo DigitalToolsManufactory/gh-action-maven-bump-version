@@ -2,13 +2,10 @@ name: "Bump Maven Project Version"
 description: "Bumps the version of a (nested) Maven project."
 inputs:
   bumpType:
-    description: "The type of version bump that should be performed."
+    description: "The type of version bump that should be performed: Must be one of the following: 'major', 'minor', or 'patch'."
     required: true
-    type: choice
-    options:
-      - major
-      - minor
-      - patch
+    type: str
+    default: "minor"
 
   pomFiles:
     description: "The paths (whitespace separated list) of the parent POM files that should be considered."
